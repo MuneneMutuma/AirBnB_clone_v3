@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Index page for views"""
+
 
 from flask import jsonify
 from models import storage
