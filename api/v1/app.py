@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """module for the app"""
 
-from flask import Flask
+from flask import Flask, jsonify
 from models import storage
 from api.v1.views import app_views
 from os import getenv
@@ -15,6 +15,11 @@ app.register_blueprint(app_views)
 def tear(error):
     """tear down the module"""
     storage.close()
+
+@app.errorhandler(404)
+def error404(error):
+    """404 error handler"""
+    return jsonify({"error": "Not found"})
 
 
 if __name__ == "__main__":
