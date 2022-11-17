@@ -20,7 +20,7 @@ def tear(error):
 @app.errorhandler(404)
 def error404(error):
     """404 error handler"""
-    return jsonify({"error": "Not found"})
+    return jsonify({"error": "Not found"}), 404
 
 
 if __name__ == "__main__":
