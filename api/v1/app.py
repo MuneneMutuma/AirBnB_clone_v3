@@ -16,6 +16,7 @@ def tear(error):
     """tear down the module"""
     storage.close()
 
+
 @app.errorhandler(404)
 def error404(error):
     """404 error handler"""
