@@ -20,7 +20,7 @@ def list_create_states():
         for key, state in states.items():
             dict_states.append(state.to_dict())
 
-        return dict_states, 200
+        return json.dumps(dict_states), 200
 
     elif request.method == "POST":
         body = request.get_json()
