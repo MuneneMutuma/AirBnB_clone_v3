@@ -25,10 +25,10 @@ def list_create_states():
     elif request.method == "POST":
         body = request.get_json()
         if not body:
-            raise Exception(400, "Not a JSON")
+            return "Not a JSON", 400
 
         if "name" not in body:
-            raise Exception(400, "Missing Name")
+            return "Missing Name", 400
 
         state = State(**body)
 
